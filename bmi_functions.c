@@ -1,7 +1,8 @@
 #include<stdio.h>
 
 float BMI(float w, float h);
-void category(float BMI);
+void category(float bmi);
+
 int main()
 {
     float output = BMI(65.0, 1.7);
@@ -10,21 +11,23 @@ int main()
     category(output);
     return 0;
 }
+
 float BMI(float w, float h) {
-    float result=w/(h*h);
+    float result = w / (h * h);
     return result;
 }
-void category(float BMI) {
-    if (BMI>=30.0) {
-        printf("Category: Obese");
+
+void category(float bmi) {
+    if (bmi >= 30.0) {
+        printf("Category: Obese\n");
     }
-    else if (BMI>=25.0) {
-        printf("Category: Overweight");
+    else if (bmi >= 25.0) {
+        printf("Category: Overweight\n");
     }
-    else if (BMI>=18.5) {
-        printf("Category: Normal");
+    else if (bmi >= 18.5) {
+        printf("Category: Normal\n");
     }
     else {
-        printf("Category: Underweight");
+        printf("Category: Underweight\n");
     }
 }
