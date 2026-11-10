@@ -5,7 +5,6 @@ float fahrenheitToCelsius(float f);
 int main()
 {
     int choice;
-    float equi;
     printf("1 - Celsius to Fahrenheit\n");
     printf("2 - Fahrenheit to Celsius\n");
     printf("Choice: ");
