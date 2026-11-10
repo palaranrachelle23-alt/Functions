@@ -13,9 +13,9 @@ int main()
 }
 
 int factorial(int n) {
-    int result=n;
-    for (int i=n-1; i>0; i--) {
-        result=result*i;
+    int result = 1;
+    for (int i = 2; i <= n; i++) {
+        result = result * i;
     }
     return result;
 }
