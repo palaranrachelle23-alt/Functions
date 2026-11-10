@@ -6,16 +6,21 @@ void printTicket(char travelClass, float baggageWeight, float baseFare, float ex
 int main()
 {
     char Tclass;
-    float baggage, fare, total, excess;
+    float baggage;
     
     printf("Enter travel class (E for economy, B for Business): ");
     scanf(" %c", &Tclass);
-    printf("Enter baggage weight (kg): ");
-    scanf("%f", &baggage);
-    
-    float baseFare=calculateFare(Tclass);
-    float excessFee=checkBaggage(Tclass, baggage);
-    printTicket(Tclass, baggage, baseFare, excessFee);
+    if (Tclass =='e' || Tclass =='E' || Tclass =='b' || Tclass =='B') {
+        printf("Enter baggage weight (kg): ");
+        scanf("%f", &baggage);
+        
+        float baseFare=calculateFare(Tclass);
+        float excessFee=checkBaggage(Tclass, baggage);
+        printTicket(Tclass, baggage, baseFare, excessFee);
+    }
+    else {
+        printf("Invalid Class\n");
+    }
     return 0;
 }   
 float calculateFare(char travelClass) {
@@ -26,9 +31,6 @@ float calculateFare(char travelClass) {
     else if (travelClass=='B' || travelClass=='b') {
         fare=6500.00;
     }    
-    else {
-        printf("E OR B RA NGANI!!!");
-    }
     return fare;
 }
 float checkBaggage(char travelClass, float baggageWeight) {
@@ -52,14 +54,12 @@ float checkBaggage(char travelClass, float baggageWeight) {
             excess=excess*150;
         }
     }    
-    else {
-        printf("E OR B RA NGANI!!!");
-    }
+    
     return excess;
 }
 void printTicket(char travelClass, float baggageWeight, float baseFare, float excessFee) {
     float total=baseFare+excessFee;
-    printf("----- BOARDING SUMMARY -----\nTravel Class: %c\n", travelClass);
+    printf("\n----- BOARDING SUMMARY -----\nTravel Class: %c\n", travelClass);
     printf("Base Fare: PHP %.2f\n", baseFare);
     printf("Baggage Weight: %.2fkg\n", baggageWeight);
     printf("Excess Baggage Fee: PHP %.2f\n", excessFee);
