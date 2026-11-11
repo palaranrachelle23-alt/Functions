@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-float categorize(float BMI);
+void categorize(float BMI);
 int main()
 {
     float h, w, BMI;
@@ -11,10 +11,10 @@ int main()
     printf("Enter weight: ");
     scanf(" %f", &w);
     printf("BMI: %.2f\n", BMI=w/(h*h));
-    float category=categorize(BMI);
+    categorize(BMI);
     return 0;
 }
-float categorize(float BMI) {
+void categorize(float BMI) {
      if (BMI>=30.0) {
         printf("Category: Obese");
     }
